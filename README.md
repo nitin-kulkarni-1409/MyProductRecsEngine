@@ -1,5 +1,6 @@
 # MyProductRecsEngine
-This is a recommendation engine service that helps in providing AI assisted product recommendations
+This is a recommendation engine service that helps in providing AI assisted product recommendations. Intended for eCommerce and various applications to utilize these services to improve customer experiences while shopping for products. Ability to show personalized products based on personalizations, their shopping experiences and recommendations based on other customer's products, thereby increasing customer footprints, extending their sessions and finally expoentiation of conversion rates.
+
 # E-Commerce Product Recommendation Engine
 
 An end-to-end recommendation system for e-commerce platforms using
@@ -7,27 +8,23 @@ Machine Learning and Deep Learning techniques.
 
 ## Features
 - Personalized product recommendations
-- Cold-start handling using content-based models
-- Deep learning–based Neural Collaborative Filtering
-- Offline evaluation with industry-standard metrics
 - Real-time inference via REST API
 
 ## Models Implemented
-- Matrix Factorization (ALS / SVD)
-- Content-Based Filtering (TF-IDF + cosine similarity)
-- Deep Learning Recommendation Model (Two-Tower / NCF)
+TBD
 
 ## Tech Stack
-- Python, PyTorch / TensorFlow
-- Pandas, NumPy, Scikit-learn
+- React Vite JS
+- NPM package manager
 - FastAPI
-- Docker
+  
 
 ## Results
-Deep learning models improved NDCG@10 by **~40%** over baseline
-collaborative filtering.
+- Deep learning models improved 
+- Collaborative filtering.
 
 ## Use Cases
 - Product detail page recommendations
-- Homepage personalization
+- Cart recommendations
+- Homepage personalizations
 - Cross-sell and upsell suggestions
