@@ -1,0 +1,6 @@
+[
+  { "userId": 1, "productId": 1, "type": "view" },
+  { "userId": 1, "productId": 3, "type": "purchase" },
+  { "userId": 2, "productId": 1, "type": "purchase" },
+  { "userId": 2, "productId": 2, "type": "view" }
+]

@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "Running Shoes", "category": "Footwear" },
+  { "id": 2, "name": "Gym T-Shirt", "category": "Apparel" },
+  { "id": 3, "name": "Yoga Mat", "category": "Fitness" },
+  { "id": 4, "name": "Smart Watch", "category": "Electronics" }
+]
