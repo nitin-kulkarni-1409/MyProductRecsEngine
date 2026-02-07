@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "gender": "women",
+    "history": [
+      101,
+      103
+    ]
+  },
+  {
+    "id": 2,
+    "gender": "men",
+    "history": []
+  },
+  {
+    "id": 33,
+    "gender": "women",
+    "history": []
+  }
+]

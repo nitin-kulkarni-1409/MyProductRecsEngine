@@ -1,22 +1,28 @@
 const express = require("express");
 const router = express.Router();
-const { getPopularProducts } = require("../recommender/popular");
-const { getPersonalizedRecommendations } = require("../recommender/personalized");
+
+// 👇 THIS is what was missing conceptually
+const recommend = require("../recommender"); // index.js is auto-resolved
 
 router.get("/", (req, res) => {
-  const userId = Number(req.query.userId);
+  const { userId, channel, limit, gender, placement } = req.query;
 
+  // Basic safety check (route-level)
   if (!userId) {
-    return res.json({ type: "popular", data: getPopularProducts() });
+    return res.status(400).json({
+      error: "Missing required parameter: userId"
+    });
   }
 
-  const personalized = getPersonalizedRecommendations(userId);
+  const result = recommend({
+    userId: Number(userId),
+    channel: channel || "general",
+    limit: limit ? Number(limit) : 5,
+    gender: gender || "women",
+    placement: placement || "any"
+  });
 
-  if (personalized.length > 0) {
-    return res.json({ type: "personalized", data: personalized });
-  }
-
-  res.json({ type: "popular", data: getPopularProducts() });
+  res.json(result);
 });
 
 module.exports = router;
