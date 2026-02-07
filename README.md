@@ -28,3 +28,20 @@ TBD
 - Cart recommendations
 - Homepage personalizations
 - Cross-sell and upsell suggestions
+
+Request comes in
+   ↓
+Validate params
+   ↓
+Load users.json
+   ↓
+Does user exist?
+   ├─ YES
+   │    ├─ Has history? → behavioral personalization
+   │    └─ No history   → contextual personalization
+   │
+   └─ NO
+        ├─ Create user
+        └─ Contextual personalization
+   ↓
+Return honest response

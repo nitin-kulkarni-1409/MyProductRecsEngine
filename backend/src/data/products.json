@@ -1,6 +1,45 @@
 [
-  { "id": 1, "name": "Running Shoes", "category": "Footwear" },
-  { "id": 2, "name": "Gym T-Shirt", "category": "Apparel" },
-  { "id": 3, "name": "Yoga Mat", "category": "Fitness" },
-  { "id": 4, "name": "Smart Watch", "category": "Electronics" }
+  {
+    "id": 1,
+    "name": "Running Shoes",
+    "category": "Footwear",
+    "brand": "nike",
+    "gender": "women",
+    "placements": [
+      "homepage",
+      "pdp"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Gym T-Shirt",
+    "category": "Apparel",
+    "brand": "adidas",
+    "gender": "men",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Yoga Mat",
+    "category": "Fitness",
+    "brand": "nike",
+    "gender": "women",
+    "placements": [
+      "pdp",
+      "checkout"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Yoga Mats",
+    "category": "Fitnesses",
+    "brand": "nike",
+    "gender": "women",
+    "placements": [
+      "pdp",
+      "checkout"
+    ]
+  }
 ]

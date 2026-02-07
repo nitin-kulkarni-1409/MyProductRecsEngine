@@ -1,20 +1,51 @@
 const products = require("../data/products.json");
 const events = require("../data/events.json");
 
-function getPersonalizedRecommendations(userId, limit = 5) {
+function getPersonalizedRecommendations({
+  userId,
+  channel = "general",
+  limit = 5,
+  gender = "women",
+  placement = "any"
+}) {
   const userEvents = events.filter(e => e.userId === userId);
 
-  if (userEvents.length === 0) return [];
+  let candidateProducts = products;
 
-  const productIds = userEvents.map(e => e.productId);
+  // 🎯 Filter by brand/channel
+  if (channel !== "general") {
+    candidateProducts = candidateProducts.filter(
+      p => p.brand === channel
+    );
+  }
 
-  const categories = products
-    .filter(p => productIds.includes(p.id))
-    .map(p => p.category);
+  // 🎯 Filter by gender
+  if (gender) {
+    candidateProducts = candidateProducts.filter(
+      p => p.gender === gender
+    );
+  }
 
-  return products
-    .filter(p => categories.includes(p.category))
-    .slice(0, limit);
+  // 🎯 Filter by placement
+  if (placement !== "any") {
+    candidateProducts = candidateProducts.filter(
+      p => p.placements.includes(placement)
+    );
+  }
+
+  // 🎯 If user has history, prioritize similar categories
+  if (userEvents.length > 0) {
+    const interactedProductIds = userEvents.map(e => e.productId);
+    const categories = products
+      .filter(p => interactedProductIds.includes(p.id))
+      .map(p => p.category);
+
+    candidateProducts = candidateProducts.filter(
+      p => categories.includes(p.category)
+    );
+  }
+
+  return candidateProducts.slice(0, limit);
 }
 
 module.exports = { getPersonalizedRecommendations };
