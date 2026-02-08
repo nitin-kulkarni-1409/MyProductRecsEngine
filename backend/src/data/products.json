@@ -15,7 +15,7 @@
     "name": "Gym T-Shirt",
     "category": "Apparel",
     "brand": "adidas",
-    "gender": "men",
+    "gender": "women",
     "placements": [
       "homepage"
     ]
@@ -32,13 +32,836 @@
     ]
   },
   {
-    "id": 33,
-    "name": "Yoga Mats",
-    "category": "Fitnesses",
+    "id": 4,
+    "name": "Running Shoes",
+    "category": "Footwear",
     "brand": "nike",
     "gender": "women",
     "placements": [
+      "homepage",
+      "pdp"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Running Shorts",
+    "category": "Apparel",
+    "brand": "puma",
+    "gender": "men",
+    "placements": [
+      "homepage",
+      "pdp"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Sports Watch",
+    "category": "Accessories",
+    "brand": "apple",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Water Bottle",
+    "category": "Accessories",
+    "brand": "hydro",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Fitness Tracker",
+    "category": "Accessories",
+    "brand": "fitbit",
+    "gender": "unisex",
+    "placements": [
+      "homepage",
+      "pdp"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Yoga Pants",
+    "category": "Apparel",
+    "brand": "lululemon",
+    "gender": "women",
+    "placements": [
       "pdp",
+      "checkout"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Basketball",
+    "category": "Sports",
+    "brand": "spalding",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Tennis Racket",
+    "category": "Sports",
+    "brand": "wilson",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Baseball Glove",
+    "category": "Sports",
+    "brand": "rawlings",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Soccer Ball",
+    "category": "Sports",
+    "brand": "adidas",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Hiking Boots",
+    "category": "Footwear",
+    "brand": "merrell",
+    "gender": "women",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Cycling Shorts",
+    "category": "Apparel",
+    "brand": "specialized",
+    "gender": "men",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Swim Goggles",
+    "category": "Accessories",
+    "brand": "speedo",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Jump Rope",
+    "category": "Fitness",
+    "brand": "proform",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Resistance Bands",
+    "category": "Fitness",
+    "brand": "theraband",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Dumbbells",
+    "category": "Fitness",
+    "brand": "cap",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Kettlebell",
+    "category": "Fitness",
+    "brand": "body-solid",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Foam Roller",
+    "category": "Fitness",
+    "brand": "triggerpoint",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Yoga Block",
+    "category": "Fitness",
+    "brand": "gaiam",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Pilates Ring",
+    "category": "Fitness",
+    "brand": "stott",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Athletic Socks",
+    "category": "Accessories",
+    "brand": "balega",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Headband",
+    "category": "Accessories",
+    "brand": "underarmour",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Sports Bag",
+    "category": "Accessories",
+    "brand": "nike",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Yoga Towel",
+    "category": "Accessories",
+    "brand": "manduka",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Running Cap",
+    "category": "Accessories",
+    "brand": "adidas",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Sports Sunglasses",
+    "category": "Accessories",
+    "brand": "oakley",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Compression Tights",
+    "category": "Apparel",
+    "brand": "2xu",
+    "gender": "men",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Running Jacket",
+    "category": "Apparel",
+    "brand": "northface",
+    "gender": "women",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Track Pants",
+    "category": "Apparel",
+    "brand": "reebok",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Basketball Shorts",
+    "category": "Apparel",
+    "brand": "nike",
+    "gender": "men",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Golf Clubs",
+    "category": "Sports",
+    "brand": "callaway",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Skateboard",
+    "category": "Sports",
+    "brand": "element",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Surfboard",
+    "category": "Sports",
+    "brand": "paddle",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Snowboard",
+    "category": "Sports",
+    "brand": "burton",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Ski Boots",
+    "category": "Sports",
+    "brand": "salomon",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Ice Skates",
+    "category": "Sports",
+    "brand": "bauer",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Rock Climbing Gear",
+    "category": "Sports",
+    "brand": "blackdiamond",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Camping Tent",
+    "category": "Accessories",
+    "brand": "coleman",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Sleeping Bag",
+    "category": "Accessories",
+    "brand": "thermarest",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Portable Grill",
+    "category": "Accessories",
+    "brand": "weber",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Cooler",
+    "category": "Accessories",
+    "brand": "igloo",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Fishing Rod",
+    "category": "Accessories",
+    "brand": "shimano",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Tackle Box",
+    "category": "Accessories",
+    "brand": "plano",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Hiking Backpack",
+    "category": "Accessories",
+    "brand": "osprey",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Water Filter",
+    "category": "Accessories",
+    "brand": "katadyn",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "First Aid Kit",
+    "category": "Accessories",
+    "brand": "adventuremedical",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Multi-tool",
+    "category": "Accessories",
+    "brand": "leatherman",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Portable Charger",
+    "category": "Accessories",
+    "brand": "anker",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Bluetooth Speaker",
+    "category": "Accessories",
+    "brand": "jbl",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Smartphone Holder",
+    "category": "Accessories",
+    "brand": "ram",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Camera",
+    "category": "Accessories",
+    "brand": "canon",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Tripod",
+    "category": "Accessories",
+    "brand": "manfrotto",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Drone",
+    "category": "Accessories",
+    "brand": "dji",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Laptop",
+    "category": "Accessories",
+    "brand": "apple",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Tablet",
+    "category": "Accessories",
+    "brand": "samsung",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Smartwatch",
+    "category": "Accessories",
+    "brand": "garmin",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Fitness App Subscription",
+    "category": "Services",
+    "brand": "myfitnesspal",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Personal Trainer Sessions",
+    "category": "Services",
+    "brand": "localgym",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Nutrition Consultation",
+    "category": "Services",
+    "brand": "healthcoach",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Group Fitness Classes",
+    "category": "Services",
+    "brand": "localgym",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Online Yoga Classes",
+    "category": "Services",
+    "brand": "yogastudio",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Meditation App Subscription",
+    "category": "Services",
+    "brand": "calm",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Meal Prep Service",
+    "category": "Services",
+    "brand": "freshly",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Health Supplements",
+    "category": "Health",
+    "brand": "optimumnutrition",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Vitamins",
+    "category": "Health",
+    "brand": "naturemade",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Protein Powder",
+    "category": "Health",
+    "brand": "whey",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Energy Bars",
+    "category": "Health",
+    "brand": "clif",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Hydration Packs",
+    "category": "Accessories",
+    "brand": "camelbak",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Fitness Journal",
+    "category": "Accessories",
+    "brand": "moleskine",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Yoga Mat Bag",
+    "category": "Accessories",
+    "brand": "gaiam",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Sports Water Bottle",
+    "category": "Accessories",
+    "brand": "hydroflask",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Fitness Tracker Watch",
+    "category": "Accessories",
+    "brand": "fitbit",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Smart Scale",
+    "category": "Accessories",
+    "brand": "withings",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Yoga Wheel",
+    "category": "Fitness",
+    "brand": "liforme",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Balance Board",
+    "category": "Fitness",
+    "brand": "wobbleboard",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Agility Ladder",
+    "category": "Fitness",
+    "brand": "proform",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Speed Parachute",
+    "category": "Fitness",
+    "brand": "proform",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Weighted Vest",
+    "category": "Fitness",
+    "brand": "hyperwear",
+    "gender": "unisex",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Boxing Gloves",
+    "category": "Fitness",
+    "brand": "everlast",
+    "gender": "unisex",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 83,
+    "name": "Martial Arts Uniform",
+    "category": "Apparel",
+    "brand": "adidas",
+    "gender": "unisex",
+    "placements": [
+      "checkout"
+    ]
+  },
+  {
+    "id": 84,
+    "name": "Dance Shoes",
+    "category": "Footwear",
+    "brand": "bloch",
+    "gender": "women",
+    "placements": [
+      "homepage"
+    ]
+  },
+  {
+    "id": 85,
+    "name": "Ballet Slippers",
+    "category": "Footwear",
+    "brand": "capezio",
+    "gender": "women",
+    "placements": [
+      "pdp"
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Tap Shoes",
+    "category": "Footwear",
+    "brand": "bloch",
+    "gender": "women",
+    "placements": [
       "checkout"
     ]
   }
