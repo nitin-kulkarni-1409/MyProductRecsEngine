@@ -3,7 +3,7 @@ const events = require("../data/events.json");
 
 function getPersonalizedRecommendations({
   userId,
-  channel = "general",
+  category = "general",
   limit = 5,
   gender = "women",
   placement = "any"
@@ -12,10 +12,10 @@ function getPersonalizedRecommendations({
 
   let candidateProducts = products;
 
-  // 🎯 Filter by brand/channel
-  if (channel !== "general") {
+  // 🎯 Filter by brand/category
+  if (category !== "general") {
     candidateProducts = candidateProducts.filter(
-      p => p.brand === channel
+      p => p.brand === category
     );
   }
 

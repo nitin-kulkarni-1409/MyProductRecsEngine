@@ -11,7 +11,7 @@
  * 
  * @param {Object} options - The recommendation options object
  * @param {string} options.userId - The unique identifier for the user
- * @param {string} options.channel - The channel or category context for recommendations
+ * @param {string} options.category - The category or category context for recommendations
  * @param {number} options.limit - The maximum number of recommendations to return
  * @param {string} options.gender - The gender demographic of the user (used for contextual recommendations)
  * 
@@ -37,7 +37,7 @@ function saveUsers(users) {
   fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
 }
 
-function recommend({ userId, channel, limit, gender }) {
+function recommend({ userId, category, limit, gender }) {
   console.log("➡️ recommend() called with userId:", userId);
   
   let users = loadUsers();
@@ -60,7 +60,7 @@ function recommend({ userId, channel, limit, gender }) {
     return {
       type: "contextual",
       reason: "NEW_USER_CREATED",
-      data: contextualRecs({ channel, gender, limit })
+      data: contextualRecs({ category, gender, limit })
     };
   }
 
@@ -77,7 +77,7 @@ function recommend({ userId, channel, limit, gender }) {
   return {
     type: "contextual",
     reason: "KNOWN_USER_NO_HISTORY",
-    data: contextualRecs({ channel, gender, limit })
+    data: contextualRecs({ category, gender, limit })
   };
 }
 
