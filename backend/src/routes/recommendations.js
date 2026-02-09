@@ -14,7 +14,7 @@
  * 
  * Query Parameters:
  * @param {number} userId - (Required) The unique identifier of the user
- * @param {string} [channel="general"] - The product channel/category (e.g., "general", "fashion", "electronics")
+ * @param {string} [category="general"] - The product category/category (e.g., "general", "fashion", "electronics")
  * @param {number} [limit=5] - Maximum number of recommendations to return
  * @param {string} [gender="women"] - Target gender demographic for recommendations (e.g., "women", "men", "unisex")
  * @param {string} [placement="any"] - Placement type for filtering recommendations (e.g., "any", "featured", "trending")
@@ -23,7 +23,7 @@
  * @returns {string} error - Error message if userId is missing (HTTP 400)
  * 
  * @example
- * GET /recommendations?userId=123&channel=fashion&limit=10&gender=women&placement=featured
+ * GET /recommendations?userId=123&category=fashion&limit=10&gender=women&placement=featured
  */
 const express = require("express");
 const router = express.Router();
@@ -33,7 +33,7 @@ const router = express.Router();
 const recommend = require("../recommender"); // index.js is auto-resolved
 
 router.get("/", (req, res) => {
-  const { userId, channel, limit, gender, placement } = req.query;
+  const { userId, category, limit, gender, placement } = req.query;
 
   // Basic safety check (route-level)
   if (!userId) {
@@ -44,7 +44,7 @@ router.get("/", (req, res) => {
 
   const result = recommend({
     userId: Number(userId),
-    channel: channel || "general",
+    category: category || "general",
     limit: limit ? Number(limit) : 5,
     gender: gender || "women",
     placement: placement || "any"

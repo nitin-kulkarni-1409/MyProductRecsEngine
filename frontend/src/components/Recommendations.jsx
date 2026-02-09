@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
  */
 const DEFAULTS = {
   userId: 33,
-  channel: "general",
+  category: "general",
   limit: 5,
   gender: "women",
   placement: "any",
@@ -23,7 +23,7 @@ function getParamsFromURL() {
 
   return {
     userId: Number(urlParams.get("userId")) || DEFAULTS.userId,
-    channel: urlParams.get("channel") || DEFAULTS.channel,
+    category: urlParams.get("category") || DEFAULTS.category,
     limit: Number(urlParams.get("limit")) || DEFAULTS.limit,
     gender: urlParams.get("gender") || DEFAULTS.gender,
     placement: urlParams.get("placement") || DEFAULTS.placement,
