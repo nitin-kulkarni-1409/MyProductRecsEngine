@@ -1,41 +1,174 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+/**
+ * -----------------------------
+ * Defaults
+ * -----------------------------
+ */
+const DEFAULTS = {
+  userId: 33,
+  channel: "general",
+  limit: 5,
+  gender: "women",
+  placement: "any",
+};
+
+/**
+ * -----------------------------
+ * Read URL params
+ * -----------------------------
+ */
+function getParamsFromURL() {
+  const urlParams = new URLSearchParams(window.location.search);
+
+  return {
+    userId: Number(urlParams.get("userId")) || DEFAULTS.userId,
+    channel: urlParams.get("channel") || DEFAULTS.channel,
+    limit: Number(urlParams.get("limit")) || DEFAULTS.limit,
+    gender: urlParams.get("gender") || DEFAULTS.gender,
+    placement: urlParams.get("placement") || DEFAULTS.placement,
+  };
+}
 
 export default function Recommendations() {
-  const [items, setItems] = useState([]);
+  const [recommendations, setRecommendations] = useState([]);
+  const [strategy, setStrategy] = useState("");
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
+  // 🔒 Guard against React 18 double-effect
+  const hasFetched = useRef(false);
+
+  const params = getParamsFromURL();
+  const { userId } = params;
+
+  /**
+   * -----------------------------
+   * Fetch recommendations
+   * -----------------------------
+   */
   useEffect(() => {
-  const params = new URLSearchParams({
-    userId: 33,
-    channel: "nike",
-    limit: 5,
-    gender: "women",
-    placement: "homepage"
-  });
+    if (hasFetched.current) return;
+    hasFetched.current = true;
+    
+    function extractProducts(data) {
+      // Case 1: already an array
+      if (Array.isArray(data)) {
+        return data;
+      }
 
-  fetch(`/api/recommendations?${params}`)
-    .then(res => res.json())
-    .then(data => {
-      console.log("API data:", data); // <-- add this
-      setItems(data.data || []);
-      setLoading(false);
-    })
-    .catch(err => {
-      console.error("API error:", err);
-      setLoading(false);
-    });
-}, []);
+      // Case 2: object of products → convert to array
+      if (
+        data &&
+        typeof data === "object" &&
+        Object.values(data).every(
+          (v) => typeof v === "object" && v !== null && "name" in v
+        )
+      ) {
+        return Object.values(data);
+      }
 
-  if (loading) return <p>Loading recommendations...</p>;
+      // Case 3: recursively search nested objects
+      if (data && typeof data === "object") {
+        for (const key of Object.keys(data)) {
+          const result = extractProducts(data[key]);
+          if (result.length > 0) return result;
+        }
+      }
+
+      return [];
+    }
+
+
+    const query = new URLSearchParams(params).toString();
+
+    fetch(`/api/recommendations?${query}`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch recommendations");
+        return res.json();
+      })
+      .then((data) => {
+        console.log("🧾 FULL API RESPONSE:", data);
+        const recs = extractProducts(data);
+
+        console.log("✅ NORMALIZED RECS:", recs);
+
+        setRecommendations(recs);
+        setStrategy(data.strategy || "unknown");
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  /**
+   * -----------------------------
+   * Track click
+   * -----------------------------
+   */
+  const handleClick = async (productId) => {
+    console.log("🖱 Tracking click:", { userId, productId });
+
+    try {
+      await fetch("/api/track", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userId,
+          productId,
+          event: "click",
+        }),
+      });
+    } catch (err) {
+      console.error("Tracking failed", err);
+    }
+  };
+
+  /**
+   * -----------------------------
+   * Render
+   * -----------------------------
+   */
+  if (loading) return <h3>Loading recommendations...</h3>;
+  if (error) return <h3>Error: {error}</h3>;
 
   return (
-    <div>
-      <h2>Recommended for You</h2>
-      <ul>
-        {items.map(item => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </ul>
+    <div style={{ padding: "20px" }}>
+      <h2>Product Recommendations</h2>
+
+      <p>
+        <strong>User:</strong> {userId} <br />
+        <strong>Strategy:</strong> {strategy}
+      </p>
+
+      {recommendations.length === 0 ? (
+        <p>No recommendations available</p>
+      ) : (
+        <ul>
+          {recommendations.map((product, index) => {
+            const productId =
+              product.id ??
+              product.productId ??
+              product.sku ??
+              index;
+
+            return (
+              <li key={productId} style={{ marginBottom: "12px" }}>
+                <strong>{product.name}</strong> – ${product.price}
+                <br />
+                <button onClick={() => handleClick(productId)}>
+                  View Product
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+
+
     </div>
   );
 }
