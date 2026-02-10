@@ -11,6 +11,7 @@ const DEFAULTS = {
   limit: 5,
   gender: "women",
   placement: "any",
+  type: "",
 };
 
 /**
@@ -20,13 +21,14 @@ const DEFAULTS = {
  */
 function getParamsFromURL() {
   const urlParams = new URLSearchParams(window.location.search);
-
+  
   return {
     userId: Number(urlParams.get("userId")) || DEFAULTS.userId,
     category: urlParams.get("category") || DEFAULTS.category,
     limit: Number(urlParams.get("limit")) || DEFAULTS.limit,
     gender: urlParams.get("gender") || DEFAULTS.gender,
     placement: urlParams.get("placement") || DEFAULTS.placement,
+    type: urlParams.get("type") || DEFAULTS.type,
   };
 }
 
