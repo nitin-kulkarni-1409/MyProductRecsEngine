@@ -14,10 +14,11 @@
  * @param {string} options.category - The category or category context for recommendations
  * @param {number} options.limit - The maximum number of recommendations to return
  * @param {string} options.gender - The gender demographic of the user (used for contextual recommendations)
+ * @param {string} [options.type] - Force recommendation type (e.g., "contextual", "similar")
  * 
  * @returns {Object} A recommendation object containing:
- *   @returns {string} type - The type of recommendation: "personalized" or "contextual"
- *   @returns {string} reason - The reason for this recommendation type (NEW_USER_CREATED, KNOWN_USER_WITH_HISTORY, KNOWN_USER_NO_HISTORY)
+ *   @returns {string} type - The type of recommendation: "personalized", "contextual", or "similar"
+ *   @returns {string} reason - The reason for this recommendation type (NEW_USER_CREATED, KNOWN_USER_WITH_HISTORY, KNOWN_USER_NO_HISTORY, FORCED_CONTEXTUAL, FORCED_SIMILAR)
  *   @returns {Array} data - The array of recommended products
  */
 const fs = require("fs");
@@ -25,6 +26,7 @@ const path = require("path");
 
 const contextualRecs = require("./contextual");
 const behavioralRecs = require("./behavioral");
+const similarProducts = require("./similarProducts");
 
 const usersFile = path.join(__dirname, "../data/users.json");
 
@@ -37,7 +39,7 @@ function saveUsers(users) {
   fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
 }
 
-function recommend({ userId, category, limit, gender }) {
+function recommend({ userId, category, limit, gender, type }) {
   console.log("➡️ recommend() called with userId:", userId);
   
   let users = loadUsers();
@@ -46,7 +48,9 @@ function recommend({ userId, category, limit, gender }) {
   let user = users.find(u => u.id === userId);
 
   console.log("🔍 Matched user:", user);
-
+  console.log("User passed category filter:", category);
+  console.log("User passed gender filter:", gender);
+  console.log("User passed type filter:", type);  
   // CASE 3: Unknown user
   if (!user) {
     user = {
@@ -60,12 +64,12 @@ function recommend({ userId, category, limit, gender }) {
     return {
       type: "contextual",
       reason: "NEW_USER_CREATED",
-      data: contextualRecs({ category, gender, limit })
+      data: contextualRecs({ category, gender, limit, seenProductIds: user.history })
     };
   }
 
-  // CASE 1: Known user with history
-  if (user.history.length > 0) {
+  // CASE 1: Known user with history (unless explicitly forced to contextual/similar)
+  if (type !== "contextual" && type !== "similar" && user.history.length > 0) {
     return {
       type: "personalized",
       reason: "KNOWN_USER_WITH_HISTORY",
@@ -73,11 +77,20 @@ function recommend({ userId, category, limit, gender }) {
     };
   }
 
-  // CASE 2: Known user, no history
+  // CASE 2: Known user, forced similar
+  if (type === "similar") {
+    return {
+      type: "similar",
+      reason: "FORCED_SIMILAR",
+      data: similarProducts({ user, limit, category })
+    };
+  }
+
+  // CASE 3: Known user, no history (or forced contextual)
   return {
     type: "contextual",
-    reason: "KNOWN_USER_NO_HISTORY",
-    data: contextualRecs({ category, gender, limit })
+    reason: type === "contextual" ? "FORCED_CONTEXTUAL" : "KNOWN_USER_NO_HISTORY",
+    data: contextualRecs({ category, gender, limit, seenProductIds: user.history })
   };
 }
 

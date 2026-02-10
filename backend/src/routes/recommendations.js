@@ -18,6 +18,7 @@
  * @param {number} [limit=5] - Maximum number of recommendations to return
  * @param {string} [gender="women"] - Target gender demographic for recommendations (e.g., "women", "men", "unisex")
  * @param {string} [placement="any"] - Placement type for filtering recommendations (e.g., "any", "featured", "trending")
+ * @param {string} [type] - Force recommendation type (e.g., "contextual", "similar")
  * 
  * @returns {Object} JSON response containing recommended products
  * @returns {string} error - Error message if userId is missing (HTTP 400)
@@ -33,7 +34,7 @@ const router = express.Router();
 const recommend = require("../recommender"); // index.js is auto-resolved
 
 router.get("/", (req, res) => {
-  const { userId, category, limit, gender, placement } = req.query;
+  const { userId, category, limit, gender, placement, type } = req.query;
 
   // Basic safety check (route-level)
   if (!userId) {
@@ -47,7 +48,8 @@ router.get("/", (req, res) => {
     category: category || "general",
     limit: limit ? Number(limit) : 5,
     gender: gender || "women",
-    placement: placement || "any"
+    placement: placement || "any",
+    type
   });
 
   res.json(result);

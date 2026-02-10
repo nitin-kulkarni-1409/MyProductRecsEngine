@@ -168,8 +168,7 @@
     "id": 22,
     "gender": "men",
     "history": [
-      15,
-      25
+      1
     ]
   },
   {
@@ -445,6 +444,8 @@
   {
     "id": 454,
     "gender": "women",
-    "history": [35]
+    "history": [
+      35
+    ]
   }
 ]

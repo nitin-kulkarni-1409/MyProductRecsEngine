@@ -30,5 +30,9 @@
   { "id": 27, "name": "Yoga Towel", "category": "Accessories", "brand": "manduka", "gender": "unisex", "placements": ["homepage"], "price": 40 },
   { "id": 28, "name": "Running Cap", "category": "Accessories", "brand": "adidas", "gender": "unisex", "placements": ["pdp"], "price": 22 },
   { "id": 29, "name": "Sports Sunglasses", "category": "Accessories", "brand": "oakley", "gender": "unisex", "placements": ["checkout"], "price": 160 },
-  { "id": 30, "name": "Compression Tights", "category": "Apparel", "brand": "2xu", "gender": "men", "placements": ["homepage"], "price": 90 }
+  { "id": 30, "name": "Compression Tights", "category": "Apparel", "brand": "2xu", "gender": "men", "placements": ["homepage"], "price": 90 },
+  { "id": 31, "name": "Sports Bra", "category": "Apparel", "brand": "nike", "gender": "women", "placements": ["homepage","pdp"], "price": 65 },
+  { "id": 32, "name": "Long Sleeve Running Shirt", "category": "Apparel", "brand": "adidas", "gender": "men", "placements": ["pdp"], "price": 55 },
+  { "id": 33, "name": "Cycling Jersey", "category": "Apparel", "brand": "pearl izumi", "gender": "women", "placements": ["homepage"], "price": 80 },
+  { "id": 34, "name": "Thermal Leggings", "category": "Apparel", "brand": "underarmour", "gender": "women", "placements": ["checkout"], "price": 70 }
 ]
