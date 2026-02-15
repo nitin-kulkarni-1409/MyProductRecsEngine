@@ -34,7 +34,7 @@ const router = express.Router();
 const recommend = require("../recommender"); // index.js is auto-resolved
 
 router.get("/", (req, res) => {
-  const { userId, category, limit, gender, placement, type } = req.query;
+  const { userId, productId, strategy, category, limit, gender, placement, type } = req.query;
 
   // Basic safety check (route-level)
   if (!userId) {
@@ -44,7 +44,9 @@ router.get("/", (req, res) => {
   }
 
   const result = recommend({
-    userId: Number(userId),
+    strategy: strategy || "behavioral",
+    userId: userId ? Number(userId) : null,
+    productId: productId ? Number(productId) : null,
     category: category || "general",
     limit: limit ? Number(limit) : 5,
     gender: gender || "women",

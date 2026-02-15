@@ -29,6 +29,7 @@ function getParamsFromURL() {
     gender: urlParams.get("gender") || DEFAULTS.gender,
     placement: urlParams.get("placement") || DEFAULTS.placement,
     type: urlParams.get("type") || DEFAULTS.type,
+    productId: urlParams.get("productId") || null,
   };
 }
 
